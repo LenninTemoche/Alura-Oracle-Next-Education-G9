@@ -43,7 +43,7 @@ h1 {
   height: 100%;
   border: 1px solid #ccc;
   border-radius: 8px;
-  overflow: auto;
+  /*overflow: auto;*/
 }
 
 .iframe-wrapper .overlay {
