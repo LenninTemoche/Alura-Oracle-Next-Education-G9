@@ -33,7 +33,7 @@ h1 {
 .iframe-wrapper {
   position: relative;
   width: 125%;
-  height: 850px;
+  height: 350px;
   margin-top: 20px;
   /*overflow: auto;*/
 }
