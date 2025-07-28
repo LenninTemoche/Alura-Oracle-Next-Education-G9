@@ -31,27 +31,74 @@ body::before {
     height: 600px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
+    justify-content: center;
     border-radius: 24px;
     border: 1px solid #1875E8;
     box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15);
     background-image: url("img/Ruido.png");
     background-size: 100% 100%;
     position: relative;
+    /*agregadi pading*/
+    padding: 20px;
 }
 
+/*modificado
 .container__contenido {
     display: flex;
     align-items: center;
     position: absolute;
     bottom: 0;
+}*/
+.container__contenido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 40px;
+}
+/*agregado imagenrobot*/
+.container__imagen-robot {
+    width: 300px;
+    height: auto;
+    border-radius: 20px;
 }
 
+/*modificado
 .container__informaciones {
     flex: 1;
     padding: 20px;
+}*/
+
+.container__informaciones {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    flex: 1;
+    max-width: 400px;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 16px;
+}
+/*agregado a h2*/
+.container__informaciones h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
 }
 
+/*agregado input select*/
+.input, select {
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 1px solid #1875E8;
+    width: 100%;
+    color: black;
+    margin-bottom: 10px;
+}
+
+/*modificado
 .container__boton {
     border-radius: 16px;
     background: #1875E8;
@@ -61,6 +108,16 @@ body::before {
     font-weight: 700;
     border: none;
     margin-top: 16px;
+}*/
+.container__boton {
+    border-radius: 10px;
+    background: #1875E8;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    width: 100%;
+    margin-top: 10px;
 }
 
 .container__texto {
@@ -115,5 +172,12 @@ h2 {
 }
 
 .boton-reset {
-    background-color: #555;
+    background-color: #444;
+    color: #fff;
+}
+
+.message, .timer {
+    font-size: 16px;
+    color: white;
+    margin-top: 5px;
 }
