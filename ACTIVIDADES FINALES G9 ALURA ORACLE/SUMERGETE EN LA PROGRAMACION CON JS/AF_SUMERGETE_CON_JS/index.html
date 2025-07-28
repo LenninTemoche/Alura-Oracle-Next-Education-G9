@@ -25,10 +25,21 @@
             </div>
             <!-- Agregar boton de intentos"> -->
             <div class="game">
-                <h2>Adivina el número secreto (1 a 100)</h2>
+                <h2>Adivina el número secreto</h2>
+
+                <label for="difficulty">Selecciona dificultad:</label>
+                <select id="difficulty" class="input">
+                    <option value="10">Fácil (0 - 10)</option>
+                    <option value="100" selected>Intermedio (0 - 100)</option>
+                    <option value="1000">Avanzado (0 - 1000)</option>
+                </select>
+
                 <input type="number" id="userInput" class="input" placeholder="Tu número..." />
                 <button id="guessBtn" class="container__boton">Intentar</button>
-                <p id="message" class="message">Tienes 6 intentos.</p>
+                <button id="resetBtn" class="container__boton boton-reset">🔄 Reiniciar</button>
+
+                <p id="message" class="message">Elige una dificultad para comenzar.</p>
+                <p id="timer" class="timer">⏱ Tiempo: 0s</p>
             </div>
 
         </div>

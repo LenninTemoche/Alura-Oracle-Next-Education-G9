@@ -88,14 +88,7 @@ h2 {
 }
 
 /*agrega estilo boton*/
-.game {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-}
-
-.input {
+.input, select {
     padding: 12px;
     font-size: 18px;
     border-radius: 8px;
@@ -104,7 +97,23 @@ h2 {
     color: black;
 }
 
+.game {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+}
+
 .message {
     font-size: 18px;
-    color: #fff;
+    color: white;
+}
+
+.timer {
+    font-size: 16px;
+    color: #aaa;
+}
+
+.boton-reset {
+    background-color: #555;
 }
