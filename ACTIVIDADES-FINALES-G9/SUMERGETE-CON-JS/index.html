@@ -17,11 +17,10 @@
         <div class="container__contenido">
             <img src="./img/robot.png" alt="Robot" class="container__imagen-robot" />
             <div class="container__informaciones">
-                <!--<img src="./img/trophy.png" alt="Icono de trofeo" />-->
                 <img src="./img/trophy.png" alt="Icono de trofeo" class="icono-trofeo" />
-                 <div class="container__texto">
-                    <h1><span class="container__texto-azul">Correcto!</span></h1>
-                    <h2>Descubriste el número secreto!</h2>
+                <div class="container__texto">
+                    <h1 id="estadoJuego"><span class="container__texto-azul">Correcto!</span></h1>
+                    <h2 id="descripcionJuego">Descubriste el número secreto!</h2>
                 </div>
             </div>
             <!-- Agregar boton de intentos"> -->
@@ -40,7 +39,7 @@
                 <button id="resetBtn" class="container__boton boton-reset"> Reiniciar</button>
 
                 <p id="message" class="message">Elige una dificultad para comenzar.</p>
-                <p id="message" class="message">Tienes 6 intentos para adivinar.</p>
+                <p class="message">Tienes 6 intentos para adivinar.</p>
                 <p id="timer" class="timer">⏱ Tiempo: 0s</p>
             </div>
 

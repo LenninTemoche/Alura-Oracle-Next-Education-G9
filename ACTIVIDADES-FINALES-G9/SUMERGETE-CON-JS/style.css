@@ -166,7 +166,12 @@ h2 {
 }
 
 .icono-trofeo {
-    width: 80px;  /* Ajusta tamaño copa */
+    width: 120px;  /* Ajusta tamaño copa */
     height: auto;
     margin: 0 auto;
+}
+
+select, option {
+    background-color: #041832; /* o un azul oscuro */
+    color: white;
 }
