@@ -64,12 +64,6 @@ body::before {
     border-radius: 20px;
 }
 
-/*modificado
-.container__informaciones {
-    flex: 1;
-    padding: 20px;
-}*/
-
 .container__informaciones {
     display: flex;
     flex-direction: column;
@@ -98,17 +92,6 @@ body::before {
     margin-bottom: 10px;
 }
 
-/*modificado
-.container__boton {
-    border-radius: 16px;
-    background: #1875E8;
-    padding: 16px 24px;
-    width: 100%;
-    font-size: 24px;
-    font-weight: 700;
-    border: none;
-    margin-top: 16px;
-}*/
 .container__boton {
     border-radius: 10px;
     background: #1875E8;
@@ -180,4 +163,10 @@ h2 {
     font-size: 16px;
     color: white;
     margin-top: 5px;
+}
+
+.icono-trofeo {
+    width: 80px;  /* Ajusta tamaño copa */
+    height: auto;
+    margin: 0 auto;
 }
