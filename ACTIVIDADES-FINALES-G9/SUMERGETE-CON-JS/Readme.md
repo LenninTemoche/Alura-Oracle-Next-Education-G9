@@ -5,7 +5,7 @@ Un pequeño juego hecho con HTML, CSS y JavaScript hecho para mejorar habilades 
 
 ---
 
-## 🖼 Vista previa
+## 🖼 Vista previa. [Jugar en Vercel](https://sumergete-con-js.vercel.app/)
 
 ![Vista previa del juego](img/captura-juego.png)
 
