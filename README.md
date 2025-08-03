@@ -1,1 +1,1 @@
- [Ver tablero en Trello](https://trello.com/b/8dO8gkTe)
+ [Preview Trello](https://lennintemoche.github.io/Alura-Oracle-Next-Education-G9/)
