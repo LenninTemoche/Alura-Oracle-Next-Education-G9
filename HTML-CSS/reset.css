@@ -1,0 +1,23 @@
+/* Reset de márgenes y rellenos */
+/*body, h1, h2, h3, p, ul, li*/
+body, p, ul, li {
+
+  margin: 0;
+  padding: 0;
+}
+
+/* Reset de estilos de lista */
+ul {
+  list-style: none;
+}
+
+/* Reset de estilos de enlace */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Estilos personalizados  */
+body {
+  font-family: sans-serif;
+}
