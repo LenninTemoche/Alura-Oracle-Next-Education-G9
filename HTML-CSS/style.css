@@ -25,6 +25,16 @@ body {
   box-sizing: border-box;
 }
 
+/*Estilos para titulo y flex a main*/
+.titulo-destaque{
+    color: chartreuse;
+}
+
+.presentation{
+    display: flex;
+    align-items: center;
+}
+
 /* Estilos del encabezado */
 h1 {
   font-size: 2.5em;
