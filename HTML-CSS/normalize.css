@@ -1,0 +1,144 @@
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* ==========================================================================
+   Elementos del documento
+   ========================================================================== */
+
+/**
+ * 1. Corrige la altura de línea en todos los navegadores.
+ * 2. Evita el ajuste automático del tamaño de la fuente después de cambios de orientación en iOS.
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * Elimina el margen en todos los navegadores.
+ */
+
+body {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Contenido de secciones
+   ========================================================================== */
+
+/**
+ * Asegura que el elemento `main` se renderice consistentemente en IE.
+ */
+
+main {
+  display: block;
+}
+
+/* ==========================================================================
+   Contenido de agrupamiento
+   ========================================================================== */
+
+/**
+ * 1. Agrega el modelo de caja correcto en Firefox.
+ * 2. Muestra el desbordamiento en Edge e IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1: Permite controlar el tamaño del elemento con `width` y `height` */
+  height: 0; /* 1: Establece la altura en 0 para que solo se vea como una línea */
+  overflow: visible; /* 2: Asegura que el contenido desbordado sea visible */
+}
+
+/* ==========================================================================
+   Semántica a nivel de texto
+   ========================================================================== */
+
+/**
+ * 1. Elimina el borde inferior en Chrome 57-.
+ * 2. Agrega la decoración de texto correcta en Chrome, Edge, IE, Opera y Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1: Elimina el borde inferior predeterminado */
+  text-decoration: underline; /* 2: Agrega un subrayado */
+  text-decoration: underline dotted; /* 2: Agrega un subrayado punteado */
+}
+
+/* ==========================================================================
+   Contenido incrustado
+   ========================================================================== */
+
+/**
+ * Agrega la visualización correcta en IE.
+ */
+
+template {
+  display: none; /* Oculta el elemento `template` */
+}
+
+/**
+ * Agrega la alineación vertical correcta en Chrome, Firefox y Opera.
+ */
+
+img {
+  vertical-align: middle; /* Alinea verticalmente las imágenes al medio */
+  border-style: none; /* Elimina el borde predeterminado de las imágenes */
+}
+
+/* ==========================================================================
+   Formularios
+   ========================================================================== */
+
+/**
+ * 1. Cambia los estilos de fuente en todos los navegadores.
+ * 2. Elimina el margen en Firefox y Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1: Hereda la fuente del elemento padre */
+  font-size: 100%; /* 1: Establece el tamaño de la fuente al 100% */
+  line-height: 1.15; /* 1: Establece la altura de línea */
+  margin: 0; /* 2: Elimina los márgenes predeterminados */
+}
+
+/**
+ * Muestra el desbordamiento en IE.
+ */
+
+button,
+input {
+  overflow: visible;
+}
+
+/**
+ * Elimina la herencia de la transformación de texto en Edge, Firefox e IE.
+ */
+
+button,
+select {
+  text-transform: none; /* Evita la transformación automática del texto */
+}
+
+/* ==========================================================================
+   Interactivo
+   ========================================================================== */
+
+/**
+ * Agrega la visualización correcta en IE 10.
+ */
+
+details {
+  display: block; /* Muestra el elemento `details` */
+}
+
+/**
+ * Agrega la visualización correcta en todos los navegadores.
+ */
+
+summary {
+  display: list-item; /* Muestra el elemento `summary` como un elemento de lista */
+}
