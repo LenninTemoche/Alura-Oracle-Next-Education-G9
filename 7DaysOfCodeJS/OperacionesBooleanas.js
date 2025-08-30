@@ -25,3 +25,14 @@ if (numeroTreinta === stringTreinta) {
 } else {
   console.log('Las variables numeroTreinta y stringTreinta no tienen el mismo tipo');
 }
+
+//3ra Comparación es similar a la 1ra
+// numeroDiez == stringDiez --> compara solo el valor, (10 == '10') = true
+// y (&&)
+// numeroDiez !== stringDiez --> compara tipo y valor, si los tipos son distintos da true
+
+if (numeroDiez == stringDiez && numeroDiez !== stringDiez) {
+  console.log('Las variables numeroDiez y stringDiez tienen el mismo valor, pero tipos diferentes');
+} else {
+  console.log('Las variables numeroDiez y stringDiez no tienen el mismo valor');
+}
