@@ -4,28 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Enlace a estilos opcionales (descomentarlos si los usas) -->
     <!--<link rel="stylesheet" href="reset.css"> Reset CSS -->
     <!--<link rel="stylesheet" href="normalize.css"> test con normalize-->
+
+    <!-- Estilos principales -->
     <link rel="stylesheet" href="style.css">    
-    <title>Portafolio</title>
+
+    <title>Desafío 2</title>
 </head>
 <body>
     <header></header>
     <main class="presentation">
-        <!--section para contenido de <h1>, <p>, <a>-->
+        <!-- Section para contenido visible de presentación -->
         <section>
             <h1>Desafío Día 2</h1>
-            <h3><p>¡Hola! Este archivo HTML sirve como contenedor para cargar el script JS 
-                que hará preguntas al usuario usando prompt() y mostrará mensajes con alert()
-            </p></h3>
+            <!-- Descripción -->
+            <h3><p>
+                    ¡Hola! Este archivo HTML sirve como contenedor para cargar el script JS 
+                    que hará preguntas al usuario usando <code>prompt()</code> y mostrará mensajes con <code>alert()</code>.
+                </p>
+            </h3>
+            <!-- Guía paso a paso para el usuario que ejecuta el script -->
+            <ul>
+                <li>Al abrir esta página, se te pedirá que ingreses tu <strong>nombre</strong>.</li>
+                <li>Luego, deberás ingresar tu <strong>edad</strong>. Solo se aceptan números mayores que 0.</li>
+                <li>Después, el sistema te preguntará qué <strong>lenguaje de programación estás estudiando</strong>.</li>
+                <li>Finalmente, deberás responder si <strong>te gusta estudiar ese lenguaje</strong>, digita:
+                    <ul>
+                        <li>1 para <strong>SÍ</strong></li>
+                        <li>2 para <strong>NO</strong></li>
+                    </ul>
+                </li>
+                <li>Si ingresas datos inválidos (vacíos, letras donde van números, etc.), el sistema te volverá a preguntar hasta que ingreses algo correcto.</li>
+            </ul>
+
+            <!-- Enlaces de contacto -->
             <a href="https://instagram.com/">Instagram</a>
             <a href="https://github.com/">GitHub</a>
         </section>
-        
-        
     </main>
+    <!-- Carga del script con lógica del desafío -->
     <script src="Variables.js"></script>
+
     <!--<img src="html-5.png" alt="Logo de HTML5">-->
     <footer></footer>
 </body>
+</html>
+
 </html>
