@@ -38,11 +38,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 10%;
+    margin: 10% 15%;
 }
 
 .presentacion__contenido{
     width: 615px;
+    display: flex;
+    flex-direction: column;
+    gap: 40PX;
 }
 
 .presentacion__contenido__titulo{
