@@ -16,24 +16,85 @@
   <script>
     // Función que se ejecuta al hacer clic en el botón
     function iniciarPrompt() {
+      let area;
+      
+      // Bucle que valida que el input no esté vacío y sea una opción válida
+      while (true) {
+        // Primer prompt: pregunta al usuario qué área quiere seguir
+        area = prompt("¿Quieres estudiar Front-end o Back-end?");
+        if (!area) {
+          alert("Por favor, escribe una opción.");
+          continue;
+        }
+
+        area = area.toLowerCase(); // Convertimos a minúsculas para evitar errores por mayúsculas
+
+        // Verificamos si la opción ingresada es válida
+        if (area === "front-end" || area === "back-end") {
+          break; // Sale del bucle si es válida
+        } else {
+          alert("Opción inválida. Escribe 'Front-end' o 'Back-end'.");
+        }
+      }
+
+      console.log(area); // Muestra la respuesta en la consola
+      let tecnologia = ""; // Variable que guardará la tecnología elegida
+
+      // Si elige "front-end"
+      if (area === "front-end") {
+        let techFront;
         
-    // Primer prompt: pregunta al usuario qué área quiere seguir
-    let area = prompt("¿Quieres estudiar Front-end o Back-end?");
-    console.log(area); // Muestra la respuesta en la consola
+        // Bucle que valida que el input no esté vacío y sea válido
+        while (true) {
+          //prompt para front-end: elige entre React o Vue
+          techFront = prompt("¿Te gustaría aprender React o Vue?");
+          if (!techFront) {
+            alert("Por favor, escribe una opción.");
+            continue;
+          }
 
-    // Si elige "front-end"
-    if (area == "front-end") {
-        // Segundo prompt para front-end: elige entre React o Vue
-        let techFront = prompt("¿Te gustaría aprender React o Vue?");
-        console.log(techFront); // Muestra la tecnología elegida
+          techFront = techFront.toLowerCase(); // Convertimos a minúsculas
 
-    // Si elige "back-end"
-    } else if (area == "back-end") {
-        // Segundo prompt para back-end: elige entre C# o Java
-        let techBack = prompt("Te gustaría estudiar C# o Java?");
-        console.log(techBack); // Muestra la tecnología elegida
-    }
+          // Validamos la tecnología elegida
+          if (techFront === "react" || techFront === "vue") {
+            tecnologia = techFront; // Guardamos la tecnología elegida
+            break;
+          } else {
+            alert("Opción inválida. Escribe 'React' o 'Vue'.");
+          }
+        }
+
+        console.log(tecnologia); // Muestra la tecnología elegida
+
+      // Si elige "back-end"
+      } else if (area === "back-end") {
+        let techBack;
+
+        // Bucle que valida que el input no esté vacío y sea válido
+        while (true) {
+          techBack = prompt("¿Te gustaría estudiar C# o Java?");
+          if (!techBack) {
+            alert("Por favor, escribe una opción.");
+            continue;
+          }
+
+          techBack = techBack.toLowerCase(); // Convertimos a minúsculas
+
+          // Validamos la tecnología elegida
+          if (techBack === "c#" || techBack === "java") {
+             tecnologia = techBack; // Guardamos la tecnología elegida
+            break;
+          } else {
+            alert("Opción inválida. Escribe 'C#' o 'Java'.");
+          }
+        }
+
+        console.log(tecnologia); // Muestra la tecnología elegida
+      }
+      // Mostramos resumen final con las opciones elegidas
+      alert(`Has elegido seguir el área de ${area.toUpperCase()} y aprender ${tecnologia.toUpperCase()}.`);
     }
   </script>
+  
 </body>
 </html>
