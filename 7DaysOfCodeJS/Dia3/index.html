@@ -115,25 +115,42 @@
        alert(`Has comenzado en el área de ${area.toUpperCase()} aprendiendo ${tecnologia.toUpperCase()}. ¡Ahora quieres ir hacia DATA SCIENCE! ¡Buena elección!`);
        }
 
-       // Paso 4: Preguntar si quiere aprender otras tecnologías
-      let otrasTecnologias = prompt("¿Hay alguna otra tecnología que te gustaría aprender? Escribe OK para continuar o cualquier otra cosa para salir.");
+       // Paso 4: Preguntar si quiere aprender otras tecnologías, guardarlas y mostrarlas
+       let tecnologiasExtra = []; // <-- Nuevo array para guardar las tecnologías
 
-      while (otrasTecnologias && otrasTecnologias.toUpperCase() === "OK") {
-        let nuevaTecnologia = prompt("¿Qué tecnología te gustaría aprender?");
-        if (nuevaTecnologia) {
-          alert(`${nuevaTecnologia} es genial, ¡seguro que será muy útil en tu carrera!`);
+       // Construimos mensaje inicial personalizado según la elección previa
+       let mensajeInicio4 = `Ya que comenzaste en el área de ${area.toUpperCase()} aprendiendo ${tecnologia.toUpperCase()}`;
+
+       if (Nuevas_Opciones === "1") {
+       mensajeInicio4 += ` y decidiste seguir especializándote`;
+       } else if (Nuevas_Opciones === "2") {
+       mensajeInicio4 += ` y decidiste convertirte en FULLSTACK`;
+       } else if (Nuevas_Opciones === "3") {
+       mensajeInicio4 += ` y decidiste cambiar hacia DATA SCIENCE`;
+       }
+
+       mensajeInicio4 += `, ¿hay alguna otra tecnología que te gustaría aprender? Escribe OK para continuar o cualquier otra cosa para salir.`;
+
+      // Mostramos el mensaje inicial personalizado
+      let otrasTecnologias = prompt(mensajeInicio4);
+
+       while (otrasTecnologias && otrasTecnologias.toUpperCase() === "OK") {
+       let nuevaTecnologia = prompt("¿Qué tecnología te gustaría aprender?");
+       if (nuevaTecnologia) {
+           tecnologiasExtra.push(nuevaTecnologia); // <-- Guardamos en el array
+           alert(`${nuevaTecnologia} es genial, ¡seguro que será muy útil en tu carrera!`);
         } else {
-          alert("No ingresaste ninguna tecnología.");
+            alert("No ingresaste ninguna tecnología.");
         }
-        // Volver a preguntar si quiere seguir agregando más
+        // Repetimos con el mensaje simple a partir de aquí
         otrasTecnologias = prompt("¿Hay alguna otra tecnología que te gustaría aprender? Escribe OK para continuar o cualquier otra cosa para salir.");
-      }
+        }
 
-      // Mensaje final
-      alert("¡Muchas Gracias por responder este breve cuestionario!");
-    
-    
-    
+        // Si el usuario ingresó alguna tecnología extra, mostramos el resumen
+        if (tecnologiasExtra.length > 0) {
+        alert(`¡Estas son las tecnologías que te interesan aprender además de ${tecnologia.toUpperCase()}: ${tecnologiasExtra.join(", ")}!`);
+        }
+        alert("¡Muchas gracias por responder este breve cuestionario!");    
     }
   </script>
   
