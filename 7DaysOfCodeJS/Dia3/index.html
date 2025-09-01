@@ -12,11 +12,28 @@
   <!-- Botón que ejecuta la función iniciarPrompt() al hacer clic -->
   <button onClick="iniciarPrompt()">Click para iniciar</button>
   
-  <!-- Carga el archivo JavaScript externo -->
-  <script src="">
+  <!-- Ejecutamos JS dentro del index -->
+  <script>
+    // Función que se ejecuta al hacer clic en el botón
+    function iniciarPrompt() {
+        
+    // Primer prompt: pregunta al usuario qué área quiere seguir
+    let area = prompt("¿Quieres estudiar Front-end o Back-end?");
+    console.log(area); // Muestra la respuesta en la consola
 
+    // Si elige "front-end"
+    if (area == "front-end") {
+        // Segundo prompt para front-end: elige entre React o Vue
+        let techFront = prompt("¿Te gustaría aprender React o Vue?");
+        console.log(techFront); // Muestra la tecnología elegida
 
-    
+    // Si elige "back-end"
+    } else if (area == "back-end") {
+        // Segundo prompt para back-end: elige entre C# o Java
+        let techBack = prompt("Te gustaría estudiar C# o Java?");
+        console.log(techBack); // Muestra la tecnología elegida
+    }
+    }
   </script>
 </body>
 </html>
