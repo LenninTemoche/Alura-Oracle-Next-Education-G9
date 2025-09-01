@@ -11,6 +11,20 @@
   
   <!-- Botón que ejecuta la función iniciarPrompt() al hacer clic -->
   <button onClick="iniciarPrompt()">Click para iniciar</button>
+
+  <!-- Lista de pasos visible desde el inicio -->
+  <section id="guia">
+    <h2>Pasos del desafío</h2>
+    <ol>
+      <li>Hacer Click en iniciar.</li>
+      <li>Elegir un área: Front-End o Back-End.</li>
+      <li>Elegir una tecnología principal dentro del área.</li>
+      <li>Decidir si especializarse, ser FullStack o cambiar a Data Science.</li>
+      <li>Digitar OK antes de añadir otras tecnologías que le interesen aprender.</li>
+    </ol>
+  </section>
+  <!-- Bloque para mostrar el resumen final de respuestas -->
+  <div id="resumen" style="margin-top: 20px;"></div>
   
   <!-- Ejecutamos JS dentro del index -->
   <script>
@@ -118,7 +132,7 @@
        // Paso 4: Preguntar si quiere aprender otras tecnologías, guardarlas y mostrarlas
        let tecnologiasExtra = []; // <-- Nuevo array para guardar las tecnologías
 
-       // Construimos mensaje inicial personalizado según la elección previa
+       // Mensaje inicial personalizado según la elección previa
        let mensajeInicio4 = `Ya que comenzaste en el área de ${area.toUpperCase()} aprendiendo ${tecnologia.toUpperCase()}`;
 
        if (Nuevas_Opciones === "1") {
@@ -150,7 +164,8 @@
         if (tecnologiasExtra.length > 0) {
         alert(`¡Estas son las tecnologías que te interesan aprender además de ${tecnologia.toUpperCase()}: ${tecnologiasExtra.join(", ")}!`);
         }
-        alert("¡Muchas gracias por responder este breve cuestionario!");    
+        alert("¡Muchas gracias por responder este breve cuestionario!");              
+        
     }
   </script>
   
