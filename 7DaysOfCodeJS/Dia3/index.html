@@ -114,6 +114,23 @@
        } else if (Nuevas_Opciones === "3") {
        alert(`Has comenzado en el área de ${area.toUpperCase()} aprendiendo ${tecnologia.toUpperCase()}. ¡Ahora quieres ir hacia DATA SCIENCE! ¡Buena elección!`);
        }
+
+       // Paso 4: Preguntar si quiere aprender otras tecnologías
+      let otrasTecnologias = prompt("¿Hay alguna otra tecnología que te gustaría aprender? Escribe OK para continuar o cualquier otra cosa para salir.");
+
+      while (otrasTecnologias && otrasTecnologias.toUpperCase() === "OK") {
+        let nuevaTecnologia = prompt("¿Qué tecnología te gustaría aprender?");
+        if (nuevaTecnologia) {
+          alert(`${nuevaTecnologia} es genial, ¡seguro que será muy útil en tu carrera!`);
+        } else {
+          alert("No ingresaste ninguna tecnología.");
+        }
+        // Volver a preguntar si quiere seguir agregando más
+        otrasTecnologias = prompt("¿Hay alguna otra tecnología que te gustaría aprender? Escribe OK para continuar o cualquier otra cosa para salir.");
+      }
+
+      // Mensaje final
+      alert("¡Muchas Gracias por responder este breve cuestionario!");
     
     
     
