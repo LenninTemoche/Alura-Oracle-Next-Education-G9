@@ -98,20 +98,22 @@
       let Nuevas_Opciones;
 
       while (true) {
-        Nuevas_Opciones = prompt("¿Qué deseas hacer a continuación?\n1 - Seguir especializándome\n2 - Convertirme en FullStack");
-        if (Nuevas_Opciones === "1" || Nuevas_Opciones === "2") {
+        Nuevas_Opciones = prompt("¿Qué deseas hacer a continuación?\n1 - Seguir especializándome\n2 - Convertirme en FullStack\n3 - Cambiar hacia Data Science");
+        if (Nuevas_Opciones === "1" || Nuevas_Opciones === "2" || Nuevas_Opciones === "3") {
           break; // Solo aceptamos 1 o 2
         } else {
-          alert("Por favor, elige una opción válida: 1 o 2.");
+          alert("Por favor, elige una opción válida: 1, 2 o 3.");
         }
       }
 
-      // Mostrar mensajes según la opción elegida
-      if (Nuevas_Opciones === "1") {
-        alert(`¡Genial! Tienes que profundizar en ${tecnologia.toUpperCase()} para ser un experto en ${area.toUpperCase()}.`);
-      } else if (Nuevas_Opciones === "2") {
-        alert(`¡Excelente decisión! Es hora de empezar a aprender otras tecnologías además de ${tecnologia.toUpperCase()} para ser FullStack.`);
-      }
+      // Mostrar mensajes según la opción elegida, incluyendo área y tecnología anteriores
+       if (Nuevas_Opciones === "1") {
+       alert(`¡Genial! Tienes que profundizar en ${tecnologia.toUpperCase()} para ser un experto en ${area.toUpperCase()}.`);
+       } else if (Nuevas_Opciones === "2") {
+       alert(`¡Excelente decisión! Es hora de empezar a aprender otras tecnologías además de ${tecnologia.toUpperCase()} para convertirte en FULLSTACK.`);
+       } else if (Nuevas_Opciones === "3") {
+       alert(`Has comenzado en el área de ${area.toUpperCase()} aprendiendo ${tecnologia.toUpperCase()}. ¡Ahora quieres ir hacia DATA SCIENCE! ¡Buena elección!`);
+       }
     
     
     
