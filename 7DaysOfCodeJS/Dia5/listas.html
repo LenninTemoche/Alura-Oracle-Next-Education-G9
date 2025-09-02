@@ -25,7 +25,7 @@
     };
     // while se ejecuta hasta que el usuario diga "no"
     while (true) {
-        let deseaAgregar = prompt("¿Deseas agregar un alimento a tu lista de compras? (si/no)");
+        let deseaAgregar = prompt("¿Deseas agregar un alimento a tu lista de compras? (sí/no)");
         //Si el usuario cancela el prompt
         if (deseaAgregar === null) {
         alert("Operación cancelada.");
@@ -38,13 +38,42 @@
         break;
         }
 
-        if (deseaAgregar !== "si") {
-        alert("Por favor, responde con 'Si' o 'No'.");
+        if (deseaAgregar !== "sí") {
+        alert("Por favor, responde con 'sí' o 'no'.");
         continue;
         }
 
+        // Parte 2: pedir el alimento
+        let alimento = prompt("¿Qué alimento deseas agregar?");
+        if (!alimento) {
+        alert("Alimento no válido.");
+        continue;
+        }
+
+        alimento = alimento.trim().toLowerCase();
+
+        // Parte 3: elegir categoría
+        let categoria = prompt(
+        `¿En qué categoría encaja "${alimento}"?\nOpciones: frutas, lácteos, congelados, dulces, verduras, otros`
+        );
+
+        if (!categoria) {
+        alert("Categoría no válida.");
+        continue;
+        }
+
+        categoria = categoria.trim().toLowerCase();
+
+        // Verificamos si la categoría es válida
+        if (categorias.hasOwnProperty(categoria)) {
+        categorias[categoria].push(alimento);
+        } else {
+        alert("Categoría no reconocida. Se agregará a 'otros'.");
+        categorias.otros.push(alimento);
+        }
     }
-    }
+
+}
 </script>
 </body>
 </html>
