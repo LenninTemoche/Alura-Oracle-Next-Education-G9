@@ -25,7 +25,7 @@
   </section>
 
   <!-- Botón para el desafío 2 (adivinar número) -->
-  <button onClick="adivinarNumero()">Jugar a adivinar un número</button>
+  <button onClick="desafio4_adivinarNumero()">Jugar a adivinar un número</button>
   <!-- Bloque para mostrar el resumen final de respuestas -->
   <div id="resumen" style="margin-top: 20px;"></div>
   
@@ -171,8 +171,10 @@
         
     }
   
-    function adivinarNumero() {
-      const numeroSecreto = 7; // Número predefinido entre 0 y 10
+    function desafio4_adivinarNumero() {
+      //const numeroSecreto = 7; // Número predefinido entre 0 y 10
+      // Número aleatorio entre 0 y 10
+      const numeroSecreto = Math.floor(Math.random() * 11);
       let intentos = 3;
 
       for (let i = 1; i <= intentos; i++) {
@@ -185,13 +187,13 @@
         }
 
         let numeroUsuario = parseInt(respuesta);
-
+        // Validar si ingresó un número válido
         if (isNaN(numeroUsuario) || numeroUsuario < 0 || numeroUsuario > 10) {
           alert("Por favor, ingresa un número válido entre 0 y 10.");
           i--; // No contar intento inválido
           continue;
         }
-
+        // Verificar si acertó
         if (numeroUsuario === numeroSecreto) {
           alert("¡Felicidades! Adivinaste el número correcto.");
           return;
