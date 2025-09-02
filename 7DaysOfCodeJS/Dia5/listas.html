@@ -6,13 +6,44 @@
     <title>Document</title>
 </head>
 <body>
+    
+    <h1>Desafío 5</h1>
+
     <!-- Botón para el desafío 3 (lista de compras) -->
-<button onClick="desafio5_ListaCompras()">Agregar a lista de compras</button>
-<h1>DEsafío 5</h1>
+    <button onClick="desafio5_ListaCompras()">Agregar a lista de compras</button>
 
 <script>
-    function desafio5_ListaCompras(){
-        
+    function desafio5_ListaCompras() {
+    // Categorías predefinidas para guardar alimentos
+    const categorias = {
+        frutas: [],
+        lacteos: [],
+        congelados: [],
+        dulces: [],
+        verduras: [],
+        otros: []
+    };
+    // while se ejecuta hasta que el usuario diga "no"
+    while (true) {
+        let deseaAgregar = prompt("¿Deseas agregar un alimento a tu lista de compras? (si/no)");
+        //Si el usuario cancela el prompt
+        if (deseaAgregar === null) {
+        alert("Operación cancelada.");
+        return;
+        }
+
+        deseaAgregar = deseaAgregar.trim().toLowerCase();
+
+        if (deseaAgregar === "no") {
+        break;
+        }
+
+        if (deseaAgregar !== "si") {
+        alert("Por favor, responde con 'Si' o 'No'.");
+        continue;
+        }
+
+    }
     }
 </script>
 </body>
