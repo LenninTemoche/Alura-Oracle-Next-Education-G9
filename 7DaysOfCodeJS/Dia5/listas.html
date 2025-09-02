@@ -73,7 +73,34 @@
         }
     }
 
-}
+    // Parte 4: mostrar resumen agrupado
+    let mensajeFinal = "Lista de compras:\n\n";
+
+    for (let categoria in categorias) {
+        let items = categorias[categoria];
+
+        if (items.length === 0) continue;
+
+        let lista = items.join(", ");
+
+        // Formatear: si hay solo 1 tal cual, si hay 2 o más  separar con coma y "y"
+        if (items.length === 2) {
+        lista = items.join(" y ");
+        } else if (items.length > 2) {
+        const ultima = items.pop();
+        lista = `${items.join(", ")} y ${ultima}`;
+        }
+
+        mensajeFinal += `${capitalizar(categoria)}: ${lista}\n`;
+    }
+
+    alert(mensajeFinal);
+    }
+
+// Capitaliza la primera letra (para mostrar en alert bonito)
+    function capitalizar(texto) {   
+    return texto.charAt(0).toUpperCase() + texto.slice(1);
+    }
 </script>
 </body>
 </html>
