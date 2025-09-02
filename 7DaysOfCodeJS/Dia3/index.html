@@ -23,6 +23,9 @@
       <li>Digitar OK antes de añadir otras tecnologías que le interesen aprender.</li>
     </ol>
   </section>
+
+  <!-- Botón para el desafío 2 (adivinar número) -->
+  <button onClick="adivinarNumero()">Jugar a adivinar un número</button>
   <!-- Bloque para mostrar el resumen final de respuestas -->
   <div id="resumen" style="margin-top: 20px;"></div>
   
@@ -167,6 +170,39 @@
         alert("¡Muchas gracias por responder este breve cuestionario!");              
         
     }
+  
+    function adivinarNumero() {
+      const numeroSecreto = 7; // Número predefinido entre 0 y 10
+      let intentos = 3;
+
+      for (let i = 1; i <= intentos; i++) {
+        let respuesta = prompt(`Intento ${i} de ${intentos}: ¿Cuál crees que es el número (entre 0 y 10)?`);
+        
+        // Validar entrada
+        if (respuesta === null) {
+          alert("Juego cancelado.");
+          return;
+        }
+
+        let numeroUsuario = parseInt(respuesta);
+
+        if (isNaN(numeroUsuario) || numeroUsuario < 0 || numeroUsuario > 10) {
+          alert("Por favor, ingresa un número válido entre 0 y 10.");
+          i--; // No contar intento inválido
+          continue;
+        }
+
+        if (numeroUsuario === numeroSecreto) {
+          alert("¡Felicidades! Adivinaste el número correcto.");
+          return;
+        } else if (i < intentos) {
+          alert("No es correcto. Intenta de nuevo.");
+        }
+      }
+
+      // Si llegó aquí, no acertó
+      alert(`Se acabaron los intentos. El número correcto era ${numeroSecreto}.`);
+    }  
   </script>
   
 </body>
