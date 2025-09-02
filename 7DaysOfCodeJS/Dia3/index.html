@@ -10,6 +10,43 @@
   <h1>7 Days of Code JS</h1> 
   
   <!-- Lista de pasos visible desde el inicio -->
+    <section id="guia-d1">    
+    <h2>Desafío Día 1</h2>
+    <!-- Botón que ejecuta la función iniciarPrompt() al hacer clic -->
+    <button onClick="desafio_dia1()">Iniciar D1</button>
+    <ol>
+      <li>Se declararon las variables:<br> 
+        numeroUno = 1<br>
+        stringUno = '1'<br>
+        numeroTreinta = 30<br>
+        stringTreinta = '30'<br>
+        numeroDiez = 10 <br>
+        stringDiez = '10';
+      </li>
+      <li>Hacer Click en iniciar.</li>
+      <li>Observar el mensaje con la comparación</li>
+      <li>Por coerción de tipos "numeroDiez == stringDiez" es "true"<br>
+          "numeroDiez !== stringDiez" compara tipos diferentes también es "true"<br>
+          . (true && true) → true se ejecuta el if
+      </li>
+      <li>El triple igual (===) compara valor y tipo al mismo tiempo "numeroTreinta === stringTreinta" es "false"</li>
+      <li>Nota: !== (negación estricta) es lo opuesto de === (comparación estricta) evalúa como true si el valor o tipo es diferente</li>
+    </ol>
+  </section>
+  
+    <section id="guia-d3">    
+    <h2>Desafío Día 3</h2>
+    <!-- Botón que ejecuta la función iniciarPrompt() al hacer clic -->
+    <button onClick="">Iniciar D2</button>
+    <ol>
+      <li>Hacer Click en iniciar.</li>
+      <li>Elegir un área: Front-End o Back-End.</li>
+      <li>Elegir una tecnología principal dentro del área.</li>
+      <li>Decidir si especializarse, ser FullStack o cambiar a Data Science.</li>
+      <li>Digitar OK antes de añadir otras tecnologías que le interesen aprender.</li>
+    </ol>
+  </section>
+
   <section id="guia-d3">    
     <h2>Desafío Día 3</h2>
     <!-- Botón que ejecuta la función iniciarPrompt() al hacer clic -->
@@ -43,6 +80,57 @@
   <!-- Ejecutamos JS dentro del index -->
   <script>
     // Función que se ejecuta al hacer clic en el botón
+    function desafio_dia1(){
+
+      let numeroUno = 1;
+      let stringUno = '1';
+
+      let numeroTreinta = 30;
+      let stringTreinta = '30';
+
+      let numeroDiez = 10;
+      let stringDiez = '10';
+
+      //1ra Comparación
+      // numeroUno == stringUno --> compara solo el valor, (1 == '1') = true
+      // y (&&)
+      // numeroUno !== stringUno --> compara tipo y valor, si los tipos son distintos da true
+      if (numeroUno == stringUno && numeroUno !== stringUno) {
+        console.log('Las variables numeroUno y stringUno tienen el mismo valor, pero tipos diferentes');
+        alert('Las variables numeroUno y stringUno tienen el mismo valor, pero tipos diferentes');
+      } else {
+        console.log('Las variables numeroUno y stringUno no tienen el mismo valor');
+        alert('Las variables numeroUno y stringUno no tienen el mismo valor');
+      }
+
+      //2da Comparación
+      //Con el operador de comparación estricta "===" imprimimos si las dos variables tienen el mismo valor y el mismo tipo
+      //30 (número) y '30' dará false 
+      if (numeroTreinta === stringTreinta) {
+        console.log('Las variables numeroTreinta y stringTreinta tienen el mismo valor y el mismo tipo');
+        alert('Las variables numeroTreinta y stringTreinta tienen el mismo valor y el mismo tipo');
+      } else {
+        console.log('Las variables numeroTreinta y stringTreinta no tienen el mismo tipo');
+        alert("Las variables numeroTreinta y stringTreinta no tienen el mismo tipo");
+      }
+
+      //3ra Comparación es similar a la 1ra
+      // numeroDiez == stringDiez --> compara solo el valor, (10 == '10') = true
+      // y (&&)
+      // numeroDiez !== stringDiez --> compara tipo y valor, si los tipos son distintos da true
+
+      if (numeroDiez == stringDiez && numeroDiez !== stringDiez) {
+        console.log('Las variables numeroDiez y stringDiez tienen el mismo valor, pero tipos diferentes');
+        alert('Las variables numeroDiez y stringDiez tienen el mismo valor, pero tipos diferentes (similar a la primera)');
+      } else {
+        console.log('Las variables numeroDiez y stringDiez no tienen el mismo valor');
+        alert('Las variables numeroDiez y stringDiez no tienen el mismo valor');
+      }
+
+
+    }
+      
+
     function iniciarPrompt() {
       let area;
       
