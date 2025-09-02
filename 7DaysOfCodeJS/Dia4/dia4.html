@@ -1,0 +1,51 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Desafío dia 4</title>
+  
+</head>
+<body>
+
+  <h1>Adivinar numero</h1>
+  <button onclick="desafio4_adivinarNumero()">Comparar</button>
+
+  <script>
+    function desafio4_adivinarNumero() {
+      //const numeroSecreto = 7; // Número predefinido entre 0 y 10
+      // Número aleatorio entre 1 y 10
+      const numeroSecreto = Math.floor(Math.random() * 10) + 1;
+      let intentos = 3;
+      for (let i = 1; i <= intentos; i++) {
+        let respuesta = prompt(`Intento ${i} de ${intentos}: Adivina el número entre 1 y 10`);        
+        // Validar entrada
+        if (respuesta === null) {
+          alert("Juego cancelado.");
+          return;
+        }
+
+        let numeroUsuario = parseInt(respuesta);
+        // Validar si ingresó un número válido
+        if (isNaN(numeroUsuario) || numeroUsuario < 1 || numeroUsuario > 10) {
+          alert("Por favor, ingresa un número válido entre 1 y 10.");
+          i--; // No contar intento inválido
+          continue;
+        }
+        // Verificar si acertó
+        if (numeroUsuario === numeroSecreto) {
+          alert("¡Felicidades! Adivinaste el número correcto.");
+          return;
+        } else {//agregamos una pequeña ayuda
+          let pista = numeroUsuario < numeroSecreto ? "El número es mayor." : "El número es menor.";
+        
+          if (i < intentos) {
+            alert(`No es correcto. Pista: ${pista}`);
+          }  
+        }
+      }
+      // Si llegó aquí, no acertó
+      alert(`Se acabaron los intentos. El número correcto era ${numeroSecreto}.`);
+    }  
+  </script>
+
+</body>
+</html>
