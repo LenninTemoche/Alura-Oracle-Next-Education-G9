@@ -422,7 +422,7 @@
             continue; // vuelve a preguntar
           }
 
-          // Parte 2: pedir el alimento
+          // Parte 2: preguntamos por el nombre del alimento
           let alimento = prompt("¿Qué alimento deseas agregar?");
           if (!alimento) {
           alert("Alimento no válido.");
@@ -433,7 +433,7 @@
 
           // Parte 3: elegir categoría
           let categoria = prompt(
-          `¿En qué categoría encaja "${alimento}"?\nOpciones: frutas, abarrotes, lácteos, congelados, dulces, verduras, otros`
+          `¿Ingrese la categoría a que corresponde: "${alimento}"?\nOpciones: frutas, abarrotes, lacteos, congelados, dulces, verduras, otros`
           );
 
           if (!categoria) {
@@ -445,24 +445,24 @@
 
           // Verificamos si la categoría es válida
           if (categorias.hasOwnProperty(categoria)) {
-          categorias[categoria].push(alimento);
+          categorias[categoria].push(alimento);//sies válida lo agregamos
           } else {
-          alert("Categoría no reconocida. Se agregará a 'otros'.");
+          alert("Categoría no reconocida. Se agregará a 'otros'.");//sino
           categorias.otros.push(alimento);
           }
       }
 
       // Parte 4: mostrar resumen agrupado
       let mensajeFinal = "Lista de compras:\n\n";
-
+      //Recorremos cada categoría y listamos los alimentos si hay alguno
       for (let categoria in categorias) {
           let items = categorias[categoria];
 
-          if (items.length === 0) continue;
+          if (items.length === 0) continue;//se omiten categorías vacías
 
           let lista = items.join(", ");
 
-          // Formatear: si hay solo 1 tal cual, si hay 2 o más  separar con coma y "y"
+          // Formateamos la lista: si hay solo 1 tal cual, si hay 2 o más  separar con coma e "y"
           if (items.length === 2) {
           lista = items.join(" y ");
           } else if (items.length > 2) {
@@ -472,7 +472,7 @@
 
           mensajeFinal += `${capitalizar(categoria)}: ${lista}\n`;
       }
-
+      //Mostramos el resumen
       alert(mensajeFinal);
       }
     
