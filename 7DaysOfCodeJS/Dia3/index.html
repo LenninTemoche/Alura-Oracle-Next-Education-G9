@@ -17,22 +17,18 @@
     <!-- Botón que ejecuta la función iniciarPrompt() al hacer clic -->
     <button onClick="desafio_dia1()">Iniciar D1</button>
     <ol>
-      <li>Se declararon las variables:<br> 
-        numeroUno = 1<br>
-        stringUno = '1'<br>
-        numeroTreinta = 30<br>
-        stringTreinta = '30'<br>
-        numeroDiez = 10 <br>
-        stringDiez = '10';
-      </li>
       <li>Hacer Click en iniciar.</li>
-      <li>Observar el mensaje con la comparación</li>
       <li>Por coerción de tipos "numeroDiez == stringDiez" es "true"<br>
-          "numeroDiez !== stringDiez" compara tipos diferentes también es "true"<br>
-          . (true && true) → true se ejecuta el if
+          "numeroDiez !== stringDiez" compara tipos diferentes es "true"<br>
+          Por lo tanto (true && true) → true se ejecuta el if
       </li>
       <li>El triple igual (===) compara valor y tipo al mismo tiempo "numeroTreinta === stringTreinta" es "false"</li>
       <li>Nota: !== (negación estricta) es lo opuesto de === (comparación estricta) evalúa como true si el valor o tipo es diferente</li>
+      <li>Variables declaradas :<br> 
+        [numeroUno = 1]  [stringUno = '1'] <br>
+        [numeroTreinta = 30] [stringTreinta = '30'] <br>
+        [numeroDiez = 10] [stringDiez = '10']
+      </li>
     </ol>
     </section>
   
@@ -390,7 +386,6 @@
     }
     
     function desafio5_ListaCompras() {
-
       // Categorías predefinidas para guardar alimentos
       const categorias = {
           frutas: [],
