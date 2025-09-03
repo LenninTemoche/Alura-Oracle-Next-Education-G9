@@ -87,9 +87,9 @@
   </div>
 
   <div class="fila">
-    <section id="guia-d4">    
+    <section id="guia-d5">    
       <h2>Desafío Día 5</h2>
-      <!-- Botón para el desafío 2 (adivinar número) -->
+      <!-- Botón para el desafío 5 (Lista de compras) -->
       <button onClick="desafio5_ListaCompras()">Iniciar D5</button>
       <ol>
         <li>Solo acepta números entre 1 y 10</li>
@@ -109,7 +109,6 @@
   </div>
 
   <div class="fila">
-
   </div>
   
   
@@ -117,7 +116,7 @@
   
 
   
-  <!-- Bloque para mostrar el resumen final de respuestas -->
+  <!-- Bloque para mostrar posterior resumen final de respuestas -->
   <div id="resumen" style="margin-top: 20px;"></div>
   
   <!-- Ejecutamos JS dentro del index -->
@@ -172,8 +171,7 @@
 
 
     }
-      
-    
+         
     function desafío_dia2(){
       // Pedimos al usuario su nombre
       let nombre = prompt("¿Cuál es tu nombre?");
@@ -404,22 +402,24 @@
       };
       // while se ejecuta hasta que el usuario diga "no"
       while (true) {
-          let deseaAgregar = prompt("¿Deseas agregar un alimento a tu lista de compras? (sí/no)");
+          let deseaAgregar = prompt("¿Deseas agregar un alimento a tu lista de compras? Sí/No");//Validaremos sí/no
           //Si el usuario cancela el prompt
           if (deseaAgregar === null) {
           alert("Operación cancelada.");
           return;
           }
-
+          //eliminamos espacios y pasamos a minúsculas
           deseaAgregar = deseaAgregar.trim().toLowerCase();
 
-          if (deseaAgregar === "no") {
-          break;
+          //Validamos Sí y No
+          if (["no"].includes(deseaAgregar)) {
+            alert("No se agregó a la lista");
+            break; // sale del bucle            
           }
 
-          if (deseaAgregar !== "sí") {
-          alert("Por favor, responde con 'sí' o 'no'.");
-          continue;
+          if (!["sí", "si"].includes(deseaAgregar)) {
+            alert("Por favor, responde con 'Sí' o 'No'.");
+            continue; // vuelve a preguntar
           }
 
           // Parte 2: pedir el alimento
