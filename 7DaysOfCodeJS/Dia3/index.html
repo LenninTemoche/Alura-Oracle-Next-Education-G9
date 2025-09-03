@@ -370,7 +370,102 @@
       }
       // Si llegó aquí, no acertó
       alert(`Se acabaron los intentos. El número correcto era ${numeroSecreto}.`);
-    }  
+    }
+    
+    function desafio5_ListaCompras() {
+
+      // Categorías predefinidas para guardar alimentos
+      const categorias = {
+          frutas: [],
+          abarrotes: [],
+          lacteos: [],
+          congelados: [],
+          dulces: [],
+          verduras: [],
+          otros: []
+      };
+      // while se ejecuta hasta que el usuario diga "no"
+      while (true) {
+          let deseaAgregar = prompt("¿Deseas agregar un alimento a tu lista de compras? (sí/no)");
+          //Si el usuario cancela el prompt
+          if (deseaAgregar === null) {
+          alert("Operación cancelada.");
+          return;
+          }
+
+          deseaAgregar = deseaAgregar.trim().toLowerCase();
+
+          if (deseaAgregar === "no") {
+          break;
+          }
+
+          if (deseaAgregar !== "sí") {
+          alert("Por favor, responde con 'sí' o 'no'.");
+          continue;
+          }
+
+          // Parte 2: pedir el alimento
+          let alimento = prompt("¿Qué alimento deseas agregar?");
+          if (!alimento) {
+          alert("Alimento no válido.");
+          continue;
+          }
+
+          alimento = alimento.trim().toLowerCase();
+
+          // Parte 3: elegir categoría
+          let categoria = prompt(
+          `¿En qué categoría encaja "${alimento}"?\nOpciones: frutas, abarrotes, lácteos, congelados, dulces, verduras, otros`
+          );
+
+          if (!categoria) {
+          alert("Categoría no válida.");
+          continue;
+          }
+
+          categoria = categoria.trim().toLowerCase();
+
+          // Verificamos si la categoría es válida
+          if (categorias.hasOwnProperty(categoria)) {
+          categorias[categoria].push(alimento);
+          } else {
+          alert("Categoría no reconocida. Se agregará a 'otros'.");
+          categorias.otros.push(alimento);
+          }
+      }
+
+      // Parte 4: mostrar resumen agrupado
+      let mensajeFinal = "Lista de compras:\n\n";
+
+      for (let categoria in categorias) {
+          let items = categorias[categoria];
+
+          if (items.length === 0) continue;
+
+          let lista = items.join(", ");
+
+          // Formatear: si hay solo 1 tal cual, si hay 2 o más  separar con coma y "y"
+          if (items.length === 2) {
+          lista = items.join(" y ");
+          } else if (items.length > 2) {
+          const ultima = items.pop();
+          lista = `${items.join(", ")} y ${ultima}`;
+          }
+
+          mensajeFinal += `${capitalizar(categoria)}: ${lista}\n`;
+      }
+
+      alert(mensajeFinal);
+      }
+    
+    
+    //Función para Capitalizar la primera letra (para mostrar en alert simpaticón)
+    function capitalizar(texto) {   
+      return texto.charAt(0).toUpperCase() + texto.slice(1);
+    }
+
+
+    
   </script>
   
 </body>
