@@ -17,6 +17,7 @@
     // Categorías predefinidas para guardar alimentos
     const categorias = {
         frutas: [],
+        abarrotes: [],
         lacteos: [],
         congelados: [],
         dulces: [],
@@ -54,7 +55,7 @@
 
         // Parte 3: elegir categoría
         let categoria = prompt(
-        `¿En qué categoría encaja "${alimento}"?\nOpciones: frutas, lácteos, congelados, dulces, verduras, otros`
+        `¿En qué categoría encaja "${alimento}"?\nOpciones: frutas, abarrotes, lácteos, congelados, dulces, verduras, otros`
         );
 
         if (!categoria) {
