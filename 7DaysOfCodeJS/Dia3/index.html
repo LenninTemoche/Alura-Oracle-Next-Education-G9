@@ -483,6 +483,143 @@
       alert(mensajeFinal);
       }
     
+    function desafio5_6_ListaCompras() {
+        // Categorías predefinidas para guardar alimentos
+        const categorias = {
+            frutas: [],
+            abarrotes: [],
+            lacteos: [],
+            congelados: [],
+            dulces: [],
+            verduras: [],
+            otros: []
+        };
+
+        // while se ejecuta hasta que el usuario diga "no"
+        while (true) {
+            // Verificamos si ya hay elementos en la lista para ofrecer la opción de eliminar
+            const hayElementos = Object.values(categorias).some(arr => arr.length > 0);
+
+            // Mostramos mensaje condicional con la opción de eliminar
+            let deseaAgregar = prompt(
+                `¿Deseas agregar un alimento a tu lista de compras?${hayElementos ? " Sí/No" : ""} Escribe una 'x' para eliminar un alimento`
+            ); //Validaremos sí/no
+
+            //Si el usuario cancela el prompt
+            if (deseaAgregar === null) {
+                alert("Operación cancelada.");
+                return;
+            }
+
+            //eliminamos espacios y pasamos a minúsculas
+            deseaAgregar = deseaAgregar.trim().toLowerCase();
+
+            //Opción para eliminar alimento si hay elementos en la lista
+            if (hayElementos && deseaAgregar === "x") {
+                // Mostramos todos los elementos con sus categorías
+                let listaActual = "Elementos actuales en tu lista:\n\n";
+                for (let categoria in categorias) {
+                    const items = categorias[categoria];
+                    if (items.length > 0) {
+                        listaActual += `${capitalizar(categoria)}: ${items.join(", ")}\n`;
+                    }
+                }
+
+                alert(listaActual); // Mostramos la lista actual
+
+                let eliminar = prompt("¿Qué alimento deseas eliminar?");
+                if (eliminar === null || eliminar.trim() === "") {
+                    alert("Entrada no válida. Cancelando eliminación.");
+                    continue;
+                }
+
+                eliminar = eliminar.trim().toLowerCase();
+
+                let encontrado = false;
+                // Recorremos todas las categorías para eliminar el alimento si existe
+                for (let categoria in categorias) {
+                    const index = categorias[categoria].indexOf(eliminar);
+                    if (index !== -1) {
+                        categorias[categoria].splice(index, 1); // eliminamos el alimento
+                        alert(`"${eliminar}" fue eliminado correctamente de la lista.`);
+                        encontrado = true;
+                        break;
+                    }
+                }
+
+                if (!encontrado) {
+                    alert("¡No fue posible encontrar el elemento en la lista!");
+                }
+
+                continue; // Volvemos al ciclo inicial
+            }
+
+            //Validamos Sí y No
+            if (["no"].includes(deseaAgregar)) {
+                alert("No se agregó a la lista");
+                break; // sale del bucle            
+            }
+
+            if (!["sí", "si"].includes(deseaAgregar)) {
+                alert("Por favor, responde con 'Sí' o 'No'." + (hayElementos ? " También puedes escribir una 'x'." : ""));
+                continue; // vuelve a preguntar
+            }
+
+            // Parte 2: preguntamos por el nombre del alimento
+            let alimento = prompt("¿Qué alimento deseas agregar?");
+            if (!alimento) {
+                alert("Alimento no válido.");
+                continue;
+            }
+
+            alimento = alimento.trim().toLowerCase();
+
+            // Parte 3: elegir categoría
+            let categoria = prompt(
+                `¿Ingrese la categoría a que corresponde: "${alimento}"?\nOpciones: frutas, abarrotes, lacteos, congelados, dulces, verduras, otros`
+            );
+
+            if (!categoria) {
+                alert("Categoría no válida.");
+                continue;
+            }
+
+            categoria = categoria.trim().toLowerCase();
+
+            // Verificamos si la categoría es válida
+            if (categorias.hasOwnProperty(categoria)) {
+                categorias[categoria].push(alimento); //si es válida lo agregamos
+            } else {
+                alert("Categoría no reconocida. Se agregará a 'otros'."); //sino
+                categorias.otros.push(alimento);
+            }
+        }
+
+        // Parte 4: mostrar resumen agrupado
+        let mensajeFinal = "Lista de compras:\n\n";
+        //Recorremos cada categoría y listamos los alimentos si hay alguno
+        for (let categoria in categorias) {
+            let items = categorias[categoria];
+
+            if (items.length === 0) continue; //se omiten categorías vacías
+
+            let lista = items.join(", ");
+
+            // Formateamos la lista: si hay solo 1 tal cual, si hay 2 o más  separar con coma e "y"
+            if (items.length === 2) {
+                lista = items.join(" y ");
+            } else if (items.length > 2) {
+                const ultima = items.pop();
+                lista = `${items.join(", ")} y ${ultima}`;
+            }
+
+            mensajeFinal += `${capitalizar(categoria)}: ${lista}\n`;
+        }
+
+        //Mostramos el resumen
+        alert(mensajeFinal);
+    }
+
     
     //Función para Capitalizar la primera letra (para mostrar en alert simpaticón)
     function capitalizar(texto) {   
