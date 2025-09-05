@@ -121,12 +121,11 @@
       <!-- Botón para el desafío 5 (Lista de compras) -->
       <button onClick="abrirCalculadora()">Iniciar D7 con GUI</button>
       <ol>
-        <li>Operaciones: suma, resta, multiplicación y división.</li>
+        <li>Versión Light: Operaciones: suma, resta, multiplicación y división.</li>
         <li>Muestra un menú de opciones para que el usuario elija operación.</li>
         <li>El resultado se imprimirá con alert y console.log</li>
         <li>La opción “salir” terminará el programa con el mensaje: "Hasta la próxima"</li>
-        <li>Versión Light...</li>
-        
+        <li>Versión con GUI: al iniciar se abre modal y se centra en pantalla.</li>        
       </ol>
     </section>
   </div>
@@ -700,13 +699,26 @@
       document.getElementById("resultado").innerText = "";
     }
 
-    // Ocultar el modal
+    /*// Ocultar el modal
     function cerrarCalculadora() {
-      document.getElementById("calculadoraModal").style.display = "none";
+      document.getElementById("resultado").innerText = "Hasta la próxima";
+      const display = document.getElementById("display");
+      // Mostrar mensaje antes de cerrar
+      display.value = "Hasta la próxima!";
+
+      // Espera 1 segundo antes de cerrar el modal
+      setTimeout(() => {
+        document.getElementById("calculadoraModal").style.display = "none";
+        display.value = ""; // Limpiar después
+      }, 10000); // 1000ms = 1 segundo
+      //document.getElementById("calculadoraModal").style.display = "none";
       document.getElementById("num1").value = "";
       document.getElementById("num2").value = "";
-      document.getElementById("resultado").innerText = "Hasta la próxima";
-    }
+      
+    }*/
+
+    
+
 
     // Lógica principal para ejecutar la operación
     function realizarOperacion(tipo) {
@@ -812,8 +824,15 @@
     }
 
     function cerrarCalculadora() {
-      document.getElementById('calculadoraModal').style.display = 'none';
-      display.value = "Hasta la próxima";
+      const display = document.getElementById("display");
+      // Mostrar mensaje antes de cerrar
+      display.value = "Hasta la próxima! by...";
+
+      // Espera 1 segundo antes de cerrar el modal
+      setTimeout(() => {
+        document.getElementById("calculadoraModal").style.display = "none";
+        display.value = ""; // Limpiar después
+      }, 2500); // 1000ms = 1 segundo
     }
 
     function appendValue(valor) {
