@@ -111,11 +111,22 @@
       </ol>
     </section>
 
-
-
   </div>
 
   <div class="fila">
+    <section>
+      <h2>Desafío Día 7</h2>
+      <!-- Botón para el desafío 5 (Lista de compras) -->
+      <button onClick="desafio7_Calculadora()">Iniciar D7</button>
+      <ol>
+        <li>Opción de eliminar alimentos, sólo si la lista tiene al menos un alimento</li>
+        <li>Muestra todos los elementos actuales categorizados antes de eliminar</li>
+        <li>Elimina el alimento si se encuentra y muestra confirmación, sino lanza alerta</li>
+        <li>Después de eliminar, vuelve al menú principal</li>
+        <li>Conserva el flujo de Dia 5</li>
+        
+      </ol>
+    </section>
   </div>
   
   
@@ -619,7 +630,105 @@
         alert(mensajeFinal);
     }
 
-    
+    // Función para sumar
+    function sumar(a, b) {
+        return a + b;
+    }
+
+    // Función para restar
+    function restar(a, b) {
+        return a - b;
+    }
+
+    // Función para multiplicar
+    function multiplicar(a, b) {
+        return a * b;
+    }
+
+    // Función para dividir
+    function dividir(a, b) {
+        if (b === 0) {
+            return "Error: no se puede dividir por cero.";
+        }
+        return a / b;
+    }
+
+    // Función principal que ejecuta la calculadora
+    function desafio7_Calculadora() {
+        while (true) {
+            // Mostramos el menú de opciones
+            let opcion = prompt(
+                "¿Qué operación deseas realizar?\n" +
+                "1. Suma\n" +
+                "2. Resta\n" +
+                "3. Multiplicación\n" +
+                "4. División\n" +
+                "5. Salir"
+            );
+
+            // Si el usuario cancela el prompt
+            if (opcion === null) {
+                alert("Operación cancelada.");
+                break;
+            }
+
+            opcion = opcion.trim();
+
+            // Si elige salir
+            if (opcion === "5") {
+                alert("Hasta la próxima");
+                break;
+            }
+
+            // Validamos opciones válidas
+            if (!["1", "2", "3", "4"].includes(opcion)) {
+                alert("Por favor, elige una opción válida (1 al 5).");
+                continue;
+            }
+
+            // Solicitamos los dos números
+            let valor1 = prompt("Ingresa el primer número:");
+            let valor2 = prompt("Ingresa el segundo número:");
+
+            if (valor1 === null || valor2 === null) {
+                alert("Operación cancelada.");
+                continue;
+            }
+
+            // Convertimos a número
+            let num1 = parseFloat(valor1);
+            let num2 = parseFloat(valor2);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Por favor, ingresa valores numéricos válidos.");
+                continue;
+            }
+
+            let resultado;
+
+            // Ejecutamos la operación correspondiente
+            switch (opcion) {
+                case "1":
+                    resultado = sumar(num1, num2);
+                    break;
+                case "2":
+                    resultado = restar(num1, num2);
+                    break;
+                case "3":
+                    resultado = multiplicar(num1, num2);
+                    break;
+                case "4":
+                    resultado = dividir(num1, num2);
+                    break;
+            }
+
+            // Mostramos el resultado
+            alert(`Resultado: ${resultado}`);
+            console.log(`Resultado de la operación: ${resultado}`);
+        }
+    }
+
+
     //Función para Capitalizar la primera letra (para mostrar en alert simpaticón)
     function capitalizar(texto) {   
       return texto.charAt(0).toUpperCase() + texto.slice(1);
