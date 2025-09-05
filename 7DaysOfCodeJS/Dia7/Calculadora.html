@@ -1,0 +1,117 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Desafío dia 7</title>
+  
+</head>
+<body>
+
+  <h1>Calculadora</h1>
+  <button onclick="calculadora()">Iniciar Calculadora</button>
+
+  <script>
+    // Función para sumar
+    function sumar(a, b) {
+        return a + b;
+    }
+
+    // Función para restar
+    function restar(a, b) {
+        return a - b;
+    }
+
+    // Función para multiplicar
+    function multiplicar(a, b) {
+        return a * b;
+    }
+
+    // Función para dividir
+    function dividir(a, b) {
+        if (b === 0) {
+            return "Error: no se puede dividir por cero.";
+        }
+        return a / b;
+    }
+
+    // Función principal que ejecuta la calculadora
+    function calculadora() {
+        while (true) {
+            // Mostramos el menú de opciones
+            let opcion = prompt(
+                "¿Qué operación deseas realizar?\n" +
+                "1. Suma\n" +
+                "2. Resta\n" +
+                "3. Multiplicación\n" +
+                "4. División\n" +
+                "5. Salir"
+            );
+
+            // Si el usuario cancela el prompt
+            if (opcion === null) {
+                alert("Operación cancelada.");
+                break;
+            }
+
+            opcion = opcion.trim();
+
+            // Si elige salir
+            if (opcion === "5") {
+                alert("Hasta la próxima");
+                break;
+            }
+
+            // Validamos opciones válidas
+            if (!["1", "2", "3", "4"].includes(opcion)) {
+                alert("Por favor, elige una opción válida (1 al 5).");
+                continue;
+            }
+
+            // Solicitamos los dos números
+            let valor1 = prompt("Ingresa el primer número:");
+            let valor2 = prompt("Ingresa el segundo número:");
+
+            if (valor1 === null || valor2 === null) {
+                alert("Operación cancelada.");
+                continue;
+            }
+
+            // Convertimos a número
+            let num1 = parseFloat(valor1);
+            let num2 = parseFloat(valor2);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Por favor, ingresa valores numéricos válidos.");
+                continue;
+            }
+
+            let resultado;
+
+            // Ejecutamos la operación correspondiente
+            switch (opcion) {
+                case "1":
+                    resultado = sumar(num1, num2);
+                    break;
+                case "2":
+                    resultado = restar(num1, num2);
+                    break;
+                case "3":
+                    resultado = multiplicar(num1, num2);
+                    break;
+                case "4":
+                    resultado = dividir(num1, num2);
+                    break;
+            }
+
+            // Mostramos el resultado
+            alert(`Resultado: ${resultado}`);
+            console.log(`Resultado de la operación: ${resultado}`);
+        }
+    }
+
+    
+</script>
+
+
+
+</body>
+</html>
