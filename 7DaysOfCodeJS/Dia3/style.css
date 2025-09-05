@@ -158,7 +158,7 @@ section#desafio7 {
 
     .calculator button.clear {
       grid-column: span 4;
-      background-color: #e74c3c;
+      background-color: #f86555;
       color: white;
     }
 
