@@ -114,10 +114,12 @@
   </div>
 
   <div class="fila">
-    <section>
+    <section id="desafio7">
       <h2>Desafío Día 7</h2>
       <!-- Botón para el desafío 5 (Lista de compras) -->
       <button onClick="desafio7_Calculadora()">Iniciar D7</button>
+      <!-- Botón para el desafío 5 (Lista de compras) -->
+      <button onClick="abrirCalculadora()">Iniciar D7 con GUI</button>
       <ol>
         <li>Operaciones: suma, resta, multiplicación y división.</li>
         <li>Muestra un menú de opciones para que el usuario elija operación.</li>
@@ -129,7 +131,46 @@
     </section>
   </div>
   
-  
+  <!-- MODAL DE LA CALCULADORA -->
+  <!-- Modal -->
+  <div id="calculadoraModal" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="cerrarCalculadora()">×</button>
+      <h2 style="text-align:center;">Calculadora</h2>
+
+      <div class="calculator">
+        <input type="text" id="display" disabled />
+
+        <!-- Fila 1 -->
+        <button class="number" onclick="appendValue('7')">7</button>
+        <button class="number" onclick="appendValue('8')">8</button>
+        <button class="number" onclick="appendValue('9')">9</button>
+        <button class="operator" onclick="appendValue('/')">/</button>
+
+        <!-- Fila 2 -->
+        <button class="number" onclick="appendValue('4')">4</button>
+        <button class="number" onclick="appendValue('5')">5</button>
+        <button class="number" onclick="appendValue('6')">6</button>
+        <button class="operator" onclick="appendValue('*')">*</button>
+
+        <!-- Fila 3 -->
+        <button class="number" onclick="appendValue('1')">1</button>
+        <button class="number" onclick="appendValue('2')">2</button>
+        <button class="number" onclick="appendValue('3')">3</button>
+        <button class="operator" onclick="appendValue('-')">-</button>
+
+        <!-- Fila 4 -->
+        <button class="number" onclick="appendValue('0')">0</button>
+        <button class="number" onclick="appendValue('.')">.</button>
+        <button class="equals" onclick="calcular()">=</button>
+        <button class="operator" onclick="appendValue('+')">+</button>
+
+        <!-- Fila 5 -->
+        <button class="clear" onclick="limpiar()">C</button>
+      </div>
+    </div>
+  </div>
+
 
   
 
@@ -653,6 +694,35 @@
         return a / b;
     }
 
+        // Mostrar el modal
+    function abrirCalculadora() {
+      document.getElementById("calculadoraModal").style.display = "block";
+      document.getElementById("resultado").innerText = "";
+    }
+
+    // Ocultar el modal
+    function cerrarCalculadora() {
+      document.getElementById("calculadoraModal").style.display = "none";
+      document.getElementById("num1").value = "";
+      document.getElementById("num2").value = "";
+      document.getElementById("resultado").innerText = "Hasta la próxima";
+    }
+
+    // Lógica principal para ejecutar la operación
+    function realizarOperacion(tipo) {
+      const n1 = parseFloat(document.getElementById("num1").value);
+      const n2 = parseFloat(document.getElementById("num2").value);
+      const resultadoElemento = document.getElementById("resultado");
+
+      if (isNaN(n1) || isNaN(n2)) {
+        resultadoElemento.innerText = "Por favor, ingresa dos números válidos.";
+        return;
+      }
+    }
+
+      let resultado;
+
+
     // Función principal que ejecuta la calculadora
     function desafio7_Calculadora() {
         while (true) {
@@ -694,7 +764,6 @@
                 alert("Operación cancelada.");
                 continue;
             }
-
             // Convertimos a número
             let num1 = parseFloat(valor1);
             let num2 = parseFloat(valor2);
@@ -732,6 +801,40 @@
     //Función para Capitalizar la primera letra (para mostrar en alert simpaticón)
     function capitalizar(texto) {   
       return texto.charAt(0).toUpperCase() + texto.slice(1);
+    }
+
+    const display = document.getElementById('display');
+    let operacion = '';
+
+    function abrirCalculadora() {
+      document.getElementById('calculadoraModal').style.display = 'block';
+      limpiar();
+    }
+
+    function cerrarCalculadora() {
+      document.getElementById('calculadoraModal').style.display = 'none';
+      display.value = "Hasta la próxima";
+    }
+
+    function appendValue(valor) {
+      operacion += valor;
+      display.value = operacion;
+    }
+
+    function limpiar() {
+      operacion = '';
+      display.value = '';
+    }
+
+    function calcular() {
+      try {
+        const resultado = eval(operacion);
+        display.value = resultado;
+        operacion = resultado.toString();
+      } catch {
+        display.value = "Error";
+        operacion = '';
+      }
     }
 
 
