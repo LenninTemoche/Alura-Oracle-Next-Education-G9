@@ -57,7 +57,7 @@ body{
 
 .header__menu__link{
     font-family: var(--fuente-montserrat);
-    font-size: 24px;
+    font-size: 1.5em;
     font-weight: 600;
     color: var(--color-terciario);
     text-decoration: none;
@@ -85,12 +85,12 @@ body{
 }
 
 .presentacion__contenido__titulo{
-    font-size: 36px;
+    font-size: 2rem;
     font-family: var(--fuente-krona);
 }
 
 .presentacion__contenido__texto{
-    font-size: 24px;
+    font-size: 1.5rem;
     font-family: var(--fuente-montserrat);
 }
 
@@ -105,7 +105,7 @@ body{
 .presentacion__enlaces__subtitulo{
     font-family: var(--fuente-krona);
     font-weight: 400;
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 
 .presentacion__enlaces__link{
@@ -118,7 +118,7 @@ body{
 
     text-align: center;
     border-radius: 10px;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 600;
     padding: 21.5px 0;
     text-decoration: none;
@@ -136,7 +136,7 @@ body{
     padding: 24px;
     text-align: center;
     font-family: var(--fuente-montserrat);
-    font-size: 24px;
+    font-size: 1.2rem;
     font-weight: 400;
 }
 
